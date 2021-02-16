@@ -37,12 +37,38 @@ class HomePage extends StatelessWidget {
 }
 
 class _SectionOne extends StatelessWidget {
+  final TextStyle textStyle1 =
+      TextStyle(fontSize: 70, letterSpacing: 16, color: LFColor.colorPink);
+  final TextStyle textStyle2 = TextStyle(
+      letterSpacing: 16,
+      fontSize: 70,
+      color: LFColor.colorBlack,
+      fontWeight: FontWeight.bold);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        padding: const EdgeInsets.only(top: 75, left: 150),
         color: LFColor.colorWhite,
-        child: Placeholder(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          //mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 158,
+              height: 33,
+              child: WebsafeSvg.asset(
+                '/images/logo.svg',
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 150),
+            Text("WE'RE", style: textStyle1),
+            Text("COMING", style: textStyle2),
+            Text("SONG", style: textStyle2),
+          ],
+        ),
       ),
     );
   }
